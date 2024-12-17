@@ -49,4 +49,26 @@ fn main() {
 
     let character: char = 'N';
     println!("My name start with: {}", character);
+
+    // 2 -> Compounds
+    // There are 2 types of compound types in RUST
+
+    // Tuples
+    let programmers: (&str, &str, &str) = ("John Doe", "Jane Doe", "Kevin Doe");
+    println!("Tuples {:?}", programmers);
+
+    // I can access single values
+
+    println!("My name is: {}", programmers.0);
+    println!("My name is: {}", programmers.1);
+    println!("My name is: {}", programmers.2);
+
+    // I can destructure values from tuple like JavaScript
+
+    let (first, second, third) = programmers;
+    println!("{}, {}, {}", first, second, third);
+
+    // I can use different data types in tuples
+    let another_tuple: (i32, f64, &str, bool) = (90, 90.4, "John Doe", true);
+    println!("{:?}", another_tuple);
 }
