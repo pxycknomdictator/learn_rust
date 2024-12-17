@@ -1,9 +1,15 @@
 fn main() {
+    /*
+        There are TWO major types of data types in rust
+        1 -> Scalar
+        2 -> Compounds
+    */
+
+    // 1 -> Scalar
     // There are different types of data types in RUST
 
     // string literals
     let username: &str = "John Doe";
-
     println!("My name is: {}", username);
 
     /*
@@ -19,8 +25,8 @@ fn main() {
         "My age is: {} and street number: {} and longest number {}",
         age, street, max_number
     );
-    // floats values
 
+    // floats values
     const PI: f32 = 3.14;
     let my_float_number: f64 = 90.3884939484843;
     let floating_number: f32 = 83.29894;
@@ -31,8 +37,16 @@ fn main() {
     );
 
     // booleans aka bool in rust
-
     let is_programmer: bool = true;
     println!("I am a programmer ? {}", is_programmer);
 
+    let is_iam_moron: bool = false;
+    println!("I am moron ? {}", is_iam_moron);
+
+    // characters aka char in rust
+    let animal: char = '🦀';
+    println!("My Favorite animal is: {}", animal);
+
+    let character: char = 'N';
+    println!("My name start with: {}", character);
 }
