@@ -71,4 +71,21 @@ fn main() {
     // I can use different data types in tuples
     let another_tuple: (i32, f64, &str, bool) = (90, 90.4, "John Doe", true);
     println!("{:?}", another_tuple);
+
+    // Arrays
+    const DAYS: [&str; 7] = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+    ];
+
+    println!("Today is: {}", DAYS[1]);
+
+    // To create array with same number with multiple times you can use this O_O
+    let some_numbers: [i32; 10] = [4; 10];
+    println!("{:?}", some_numbers);
 }
