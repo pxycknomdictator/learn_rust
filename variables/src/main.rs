@@ -3,7 +3,13 @@
     let global_scope_variable: &str = "Global";
 */
 
+/*
+    constants only declare in UPPER_CASE + SNAKE_CASE only other wise ready for errors and warning
+*/
+const JWT_SECRET_KEY: &str = "939393939";
+
 fn main() {
+    println!("Constant: {}", JWT_SECRET_KEY);
     // First of all rust is static type language so you can't do any stupidity like JavaScript
 
     let username: &str = "John Doe";
@@ -34,9 +40,8 @@ fn main() {
     println!("Static Negative number: {}", negative_number);
 
     const PI: f64 = 3.14;
-    println!("The value of PI is: {}", PI); 
+    println!("The value of PI is: {}", PI);
 
     let my_heart_4_you: char = '🦀';
     println!("I like you crab!: {}", my_heart_4_you);
-
 }
