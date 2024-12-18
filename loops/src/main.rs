@@ -72,4 +72,10 @@ fn main() {
         );
         second_index += 1;
     }
+
+    // Real Epic uses that way
+
+    for day in DAYS {
+        println!("Epic Dev: {}", day);
+    }
 }
