@@ -11,4 +11,18 @@ fn main() {
     //     println!("Oh no! {}", counter);
     //     counter += 1;
     // }
+
+    // The way you exits from infinite loop
+    let mut counter: i32 = 0;
+
+    let message: &str = loop {
+        println!("Go Go Go... {}", counter);
+        counter += 1;
+
+        if counter == 10 {
+            break "So we cooked";
+        }
+    };
+
+    println!("Final message {}", message);
 }
