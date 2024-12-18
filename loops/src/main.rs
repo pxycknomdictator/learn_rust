@@ -78,4 +78,27 @@ fn main() {
     for day in DAYS {
         println!("Epic Dev: {}", day);
     }
+
+    // labeling and nested loops
+
+    let mut out_index: i32 = 0;
+
+    'outer_loop: loop {
+        println!("Outer: {}", out_index);
+        out_index += 1;
+
+        let mut inner_index: i32 = 0;
+        'inner_loop: loop {
+            println!("Inner: {} ---------------------------", inner_index);
+            inner_index += 1;
+
+            if inner_index == 5 {
+                break 'inner_loop;
+            }
+        }
+
+        if out_index == 10 {
+            break 'outer_loop;
+        }
+    }
 }
