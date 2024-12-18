@@ -58,4 +58,13 @@ fn main() {
     } else {
         println!("The number is out of mind")
     }
+
+    // Even & Odd Game
+    let number: u8 = 89;
+
+    if number % 2 == 0 {
+        println!("The number is Even: {}", number)
+    } else {
+        println!("The number is Odd: {}", number)
+    }
 }
