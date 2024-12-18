@@ -31,17 +31,31 @@ fn main() {
     let is_eighteen_plus: bool = true;
     let has_national_card: bool = true;
 
-    // if is_citizen {
-    //     if is_eighteen_plus {
-    //         if has_national_card {
-    //             println!("You can vote!")
-    //         } else {
-    //             println!("You don't have NIC")
-    //         }
-    //     } else {
-    //         println!("You are not a adult")
-    //     }
-    // } else {
-    //     println!("You are not a citizen")
-    // }
+    if is_citizen {
+        if is_eighteen_plus {
+            if has_national_card {
+                println!("You can vote!")
+            } else {
+                println!("You don't have NIC")
+            }
+        } else {
+            println!("You are not a adult")
+        }
+    } else {
+        println!("You are not a citizen")
+    }
+
+    // Number game
+
+    let my_number: u8 = 90;
+
+    if my_number == 80 {
+        println!("The number is Eighty")
+    } else if my_number == 29 {
+        println!("The number is Twenty nine")
+    } else if my_number == 30 {
+        println!("The number is Thirty")
+    } else {
+        println!("The number is out of mind")
+    }
 }
