@@ -46,10 +46,30 @@ fn main() {
     // Noobs use that way
     let mut index: usize = 0;
     loop {
-        println!("{}: {}", index, MONTHS[index]);
+        println!("Noobs Dev {}: {}", index, MONTHS[index]);
         index += 1;
         if MONTHS.len() == index {
             break;
         }
+    }
+
+    // Professional use that way
+    const DAYS: [&str; 7] = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+    ];
+
+    let mut second_index: usize = 0;
+    while DAYS.len() >= second_index {
+        println!(
+            "Professional Dev: {}, {}",
+            second_index, MONTHS[second_index]
+        );
+        second_index += 1;
     }
 }
