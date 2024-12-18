@@ -24,4 +24,24 @@ fn main() {
     } else {
         println!("Okay so the day is: {}", day);
     }
+
+    // lets make a game
+
+    let is_citizen: bool = true;
+    let is_eighteen_plus: bool = true;
+    let has_national_card: bool = true;
+
+    // if is_citizen {
+    //     if is_eighteen_plus {
+    //         if has_national_card {
+    //             println!("You can vote!")
+    //         } else {
+    //             println!("You don't have NIC")
+    //         }
+    //     } else {
+    //         println!("You are not a adult")
+    //     }
+    // } else {
+    //     println!("You are not a citizen")
+    // }
 }
