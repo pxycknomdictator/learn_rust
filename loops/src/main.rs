@@ -25,4 +25,31 @@ fn main() {
     };
 
     println!("Final message {}", message);
+
+    // Print something with loop in array
+
+    const MONTHS: [&str; 12] = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    // Noobs use that way
+    let mut index: usize = 0;
+    loop {
+        println!("{}: {}", index, MONTHS[index]);
+        index += 1;
+        if MONTHS.len() == index {
+            break;
+        }
+    }
 }
