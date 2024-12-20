@@ -1,4 +1,4 @@
-# Learning Rust
+# From JS/TS to Rust: The Ultimate Challenge 💻
 
 This repository is a collection of notes, exercises, and projects that I have worked on as part of my journey to learn Rust programming language.
 
