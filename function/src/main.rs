@@ -15,6 +15,9 @@ fn main() {
 
     let temp2: i32 = fahrenheit_to_celsius(temp);
     println!("{} Fahrenheit to Celsius is: {}", temp, temp2);
+
+    let state: bool = do_something(2);
+    println!("{}", state);
 }
 
 fn add_two_numbers(num1: i32, num2: i32) {
@@ -34,4 +37,11 @@ fn celsius_to_fahrenheit(celsius: i32) -> f64 {
 
 fn fahrenheit_to_celsius(fahrenheit: f64) -> i32 {
     ((fahrenheit - 32.0) * (5.0 / 9.0)) as i32
+}
+
+fn do_something(number: i32) -> bool {
+    if number % 2 == 0 {
+        return true;
+    }
+    false
 }
