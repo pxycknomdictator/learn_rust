@@ -22,6 +22,12 @@ fn add_two_numbers(num1: i32, num2: i32) {
     println!("{} + {} = {}", num1, num2, result);
 }
 
+/*
+    so why this fn looks so weird?
+    because in rust you can't do arithmetics operations with different data types like 9.39 * 100
+    in javaScript you can but in RUST you can't
+*/
+
 fn celsius_to_fahrenheit(celsius: i32) -> f64 {
     1.8 * celsius as f64 + 32.0
 }
