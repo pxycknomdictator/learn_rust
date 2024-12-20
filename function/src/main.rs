@@ -1,10 +1,21 @@
 const CELSIUS: i32 = 38;
+const USERNAME: &str = "John Doe";
+const JWT_TOKEN: &str = "939393";
+
+fn is_authenticated(name: &str, token: &str) -> bool {
+    if (name.trim() != "") && (token.trim() != "") {
+        return true;
+    }
+    false
+}
 
 fn calculate_and_return(n1: i32, n2: i32) -> f64 {
     return (n2 as f64 / n1 as f64) * 100.0;
 }
 
 fn main() {
+    let output: bool = is_authenticated(USERNAME, JWT_TOKEN);
+    println!("is_authentic person ? {}", output);
     println!("Hello Rust Functions");
     let student1: f64 = calculate_and_return(200, 147);
     println!("Student1 percentage is: {}", student1);
