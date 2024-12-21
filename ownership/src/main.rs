@@ -37,4 +37,24 @@ fn main() {
 
     // println!("s1 value is: {s1}");
 
+    // let mut s = String::from("hello");
+    // s = String::from("ahoy");
+
+    // println!("{s}, world!");
+
+    // expensive way to solve problem
+    // let s1: String = String::from("Hello, World");
+    // let s2: String = s1.clone();
+
+    // println!("{s1}, {s2}");
+
+    // here is a way to steal ownership
+
+    // let jwt_secret_key: String = String::from("9393939");
+    // steal_ownership(jwt_secret_key);
+    // println!("{}", jwt_secret_key);
 }
+
+// fn steal_ownership(key: String) {
+//     println!("{key}");
+// }
