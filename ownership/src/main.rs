@@ -53,8 +53,17 @@ fn main() {
     // let jwt_secret_key: String = String::from("9393939");
     // steal_ownership(jwt_secret_key);
     // println!("{}", jwt_secret_key);
+
+    let jwt_secret_key: String = String::from("9393939");
+    let (jwt, length) = steal_and_give_back_ownership(jwt_secret_key);
+    println!("{jwt}, {length}");
 }
 
 // fn steal_ownership(key: String) {
 //     println!("{key}");
 // }
+
+fn steal_and_give_back_ownership(key: String) -> (String, usize) {
+    let result: usize = key.len();
+    (key, result)
+}
