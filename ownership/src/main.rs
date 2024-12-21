@@ -25,9 +25,16 @@ fn main() {
 
     // what about special && complex data types like String
 
-    let mut todo: String = String::from("Hello, ");
+    let mut todo: String = String::from("Hello World from, ");
 
-    todo.push_str("word");
+    todo.push_str("Ownership");
 
     println!("{todo}");
+
+    // here we go we got and error because we move ownership to s2 now s1 is useless
+    // let s1: String = String::from("Hi Rust");
+    // let s2 = s1;
+
+    // println!("s1 value is: {s1}");
+
 }
