@@ -16,11 +16,22 @@ fn main() {
     let name: String = String::from("John Doe");
     let length: usize = calculate_length(&name);
     println!("My name is: {} and my name length is: {}", name, length);
+
+    // =========================================================================
+
+    // What happened you want that a fn mutate your variable also what should we do in those scenario ?
+    let mut my_car = String::from("hello");
+    modify_car(&mut my_car);
+    println!("{}", my_car);
 }
 
 fn calculate_length(name: &String) -> usize {
     let length: usize = name.len();
     length
+}
+
+fn modify_car(car: &mut String) {
+    car.push_str(" Color change to gray");
 }
 
 // fn calculate_length(name: String) -> (String, usize) {
