@@ -76,3 +76,5 @@ fn give_ownership() -> String {
     let s: String = String::from("Hi");
     s
 }
+
+// so owner_ship is not a hardest topic for me its so easy man :)
