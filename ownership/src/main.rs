@@ -57,6 +57,10 @@ fn main() {
     let jwt_secret_key: String = String::from("9393939");
     let (jwt, length) = steal_and_give_back_ownership(jwt_secret_key);
     println!("{jwt}, {length}");
+
+    let new_owner: String = give_ownership();
+
+    println!("{}", new_owner);
 }
 
 // fn steal_ownership(key: String) {
@@ -66,4 +70,9 @@ fn main() {
 fn steal_and_give_back_ownership(key: String) -> (String, usize) {
     let result: usize = key.len();
     (key, result)
+}
+
+fn give_ownership() -> String {
+    let s: String = String::from("Hi");
+    s
 }
