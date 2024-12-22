@@ -77,6 +77,17 @@ fn main() {
 
         println!("{} {} {}", r1, r2, r3);
     */
+
+    // here you can see that dangle function give a reference not a ownership
+    // let secret = dangle();
+
+    // println!("{}", secret);
+
+    // ==========================================
+
+    // Now no_dangle function give his ownership
+    let secret: String = no_dangle();
+    println!("{}", secret);
 }
 
 fn calculate_length(name: &String) -> usize {
@@ -92,3 +103,13 @@ fn modify_car(car: &mut String) {
 //     let length: usize = name.len();
 //     (name, length)
 // }
+
+// fn dangle() -> &String {
+//     let secret: String = String::from("Top Secret");
+//     &secret
+// }
+
+fn no_dangle() -> String {
+    let secret: String = String::from("Top Secret");
+    secret
+}
