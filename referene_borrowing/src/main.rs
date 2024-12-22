@@ -23,6 +23,60 @@ fn main() {
     let mut my_car = String::from("hello");
     modify_car(&mut my_car);
     println!("{}", my_car);
+
+    // =====================================================
+
+    // we cannot give mutable reference more that one time until we not use one
+
+    // Invalid
+    // let mut s = String::from("hello");
+
+    // let r1 = &mut s;
+    // let r2 = &mut s;
+
+    // println!("{}, {}", r1, r2);
+
+    // Valid
+    let mut s = String::from("hello");
+
+    let r1 = &mut s;
+    println!("{}", r1);
+
+    let r2 = &mut s;
+    println!("{}", r2);
+
+    // This is a mutable reference but this variable in block scope
+    {
+        let r1 = &mut s;
+        println!("Inside the scope {}", r1);
+    }
+
+    let r2 = &mut s;
+    println!("Outside the scope {}", r2);
+
+    // ========================================
+
+    // This the valid because we are using immutable variable on first
+    let mut student_name = String::from("John Doe");
+
+    let r1 = &student_name;
+    let r2 = &student_name;
+    println!("{} {}", r1, r2);
+
+    let r3 = &mut student_name;
+    println!("{}", r3);
+
+    /*
+        There is the big problem
+
+        let mut student_name = String::from("John Doe");
+
+        let r1 = &student_name;
+        let r2 = &student_name;
+        let r3 = &mut student_name; // big problem is here because r1 and r2 get his immutable reference but we don't know r3 will be change on future than r1 and r2 calculation are failed or invalid
+
+        println!("{} {} {}", r1, r2, r3);
+    */
 }
 
 fn calculate_length(name: &String) -> usize {
