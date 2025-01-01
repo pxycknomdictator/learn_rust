@@ -33,4 +33,21 @@ fn main() {
     print!("{} \n", second_user.age);
     print!("{} \n", second_user.jwt_token);
 
+
+    // We can also change the values of the struct after creating the instance, but we can't mutate a specific field of a struct instance unless we make the entire instance mutable.
+    
+    let mut third_user: User = User {
+        age: 29,
+        jwt_token: String::from("992kd82992929d92020e"),
+        username: String::from("Jane Doe"),
+        active: true
+    };
+
+    third_user.age = 18;
+
+    print!("{} \n", third_user.active);
+    print!("{} \n", third_user.username);
+    print!("{} \n", third_user.age);
+    print!("{} \n", third_user.jwt_token);
+
 }
