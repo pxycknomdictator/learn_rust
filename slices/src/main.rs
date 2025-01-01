@@ -13,7 +13,7 @@
 
 // fn get_first_word(input: &String) -> usize {
 //     // Honestly i don't know what i'm doing here
-    
+
 //     let bytes = input.as_bytes();
 //     for (i, &item) in bytes.iter().enumerate() {
 //         if item == b' ' {
@@ -27,16 +27,37 @@
 fn main() {
     // First i need to understand what is a slice? A slice is a reference to a part of a string or an array and it looks like this [start..end] and it's a reference to the original string or array slices don't need ownership and they are immutable by default
 
-    let greetings: String = String::from("Hello Rust");
-
+    
     // First way
-
+    
     // let first_word = &greetings[0..5];
     // let second_word = &greetings[6..10];
-
+    
     // Second way
-    let first_word = &greetings[..5];
-    let second_word = &greetings[6..];
+    // let first_word = &greetings[..5];
+    // let second_word = &greetings[6..];
+    
+    // print!("{}, {}", first_word, second_word);
 
-    print!("{}, {}", first_word, second_word);
+
+    // add mut on this variable and uncomment below code
+    
+    let greetings: String = String::from("Hello Rust");
+    let result:&str  = get_first_word(&greetings);
+
+    // greetings.clear(); now this make an error
+    
+    println!("The string: {} world length is: {}", greetings, result.len());
+}
+
+fn get_first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
