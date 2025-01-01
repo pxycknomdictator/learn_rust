@@ -4,7 +4,13 @@ struct User {
     username: String,
     age: i32,
     active: bool,
-    jwt_token: String
+    jwt_token: String,
+}
+
+struct Student {
+    name: String,
+    age: i32,
+    is_student: bool,
 }
 
 fn main() {
@@ -13,7 +19,7 @@ fn main() {
         jwt_token: String::from("9922iks9o293901"),
         age: 92,
         username: String::from("Noman"),
-        active: true 
+        active: true,
     };
 
     print!("{} \n", first_user.active);
@@ -25,7 +31,7 @@ fn main() {
         age: 92,
         jwt_token: String::from("992kd82992929"),
         username: String::from("John Doe"),
-        active: false
+        active: false,
     };
 
     print!("{} \n", second_user.active);
@@ -33,14 +39,13 @@ fn main() {
     print!("{} \n", second_user.age);
     print!("{} \n", second_user.jwt_token);
 
-
     // We can also change the values of the struct after creating the instance, but we can't mutate a specific field of a struct instance unless we make the entire instance mutable.
-    
+
     let mut third_user: User = User {
         age: 29,
         jwt_token: String::from("992kd82992929d92020e"),
         username: String::from("Jane Doe"),
-        active: true
+        active: true,
     };
 
     third_user.age = 18;
@@ -50,4 +55,19 @@ fn main() {
     print!("{} \n", third_user.age);
     print!("{} \n", third_user.jwt_token);
 
+    let student_1: Student = generate_struct(String::from("Noman"), 69, true);
+    print!(
+        "My name is: {} \n My age is: {} \n and I am a student {}",
+        student_1.name, student_1.age, student_1.is_student
+    );
+}
+
+
+// As you can see this function create a struct with different arguments pass by user
+fn generate_struct(name: String, age: i32, is_student: bool) -> Student {
+    Student {
+        age,
+        is_student,
+        name,
+    }
 }
