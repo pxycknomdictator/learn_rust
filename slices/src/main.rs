@@ -41,13 +41,15 @@ fn main() {
 
 
     // add mut on this variable and uncomment below code
-    
+
     let greetings: String = String::from("Hello Rust");
     let result:&str  = get_first_word(&greetings);
 
     // greetings.clear(); now this make an error
     
     println!("The string: {} world length is: {}", greetings, result.len());
+
+    about_slices();
 }
 
 fn get_first_word(s: &String) -> &str {
@@ -60,4 +62,15 @@ fn get_first_word(s: &String) -> &str {
     }
 
     &s[..]
+}
+
+
+fn about_slices() {
+    let languages: [&str; 6] = ["JavaScript", "TypeScript", "Rust", "Go", "Python", "Java"];
+
+    let first_four: &[&str] = &languages[..4];
+    let last_lang = &languages[3..];
+    
+    println!("{:?}", first_four);
+    println!("{:?}", last_lang);
 }
