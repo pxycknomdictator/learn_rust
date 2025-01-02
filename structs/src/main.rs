@@ -57,9 +57,25 @@ fn main() {
 
     let student_1: Student = generate_struct(String::from("Noman"), 69, true);
     print!(
-        "My name is: {} \n My age is: {} \n and I am a student {}",
+        "My name is: {}\nMy age is: {}\nand I am a student {}",
         student_1.name, student_1.age, student_1.is_student
     );
+
+    /* As you can see, I created a `Student` struct instance as mutable, passing ownership.
+    This allows me to change the student's name or other fields later in the code. */
+
+    let mut last_student: Student = Student {
+        age: 9292,
+        is_student: true,
+        name: String::from("John Doe")
+    };
+
+    // I know this is exploding your mind, but this is how Rust works. It's a bit different from other programming languages.
+    let name_ref = last_student.name;
+    last_student.name = String::from("Jane Doe");
+
+    println!("\nReference Name is: {}", name_ref);
+    println!("\nChanged Name is: {}", last_student.name);
 }
 
 
