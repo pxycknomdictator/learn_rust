@@ -7,6 +7,13 @@ struct User {
     jwt_token: String,
 }
 
+struct Employee {
+    name: String,
+    age: u8,
+    address: String,
+    email : String
+}
+
 struct Student {
     name: String,
     age: i32,
@@ -76,6 +83,45 @@ fn main() {
 
     println!("\nReference Name is: {}", name_ref);
     println!("\nChanged Name is: {}", last_student.name);
+
+
+
+    // lets suppose we have 2 structs and both structs some values are same
+
+    let employee1: Employee = Employee {
+        name: String::from("Noman"),
+        address: String::from("Karachi, Pakistan"),
+        age: 20,
+        email: String::from("noman@gmail.com")
+    };
+
+    // most pain full way to do that
+    let employee2: Employee = Employee {
+        name: employee1.name,
+        address: employee1.address,
+        age: employee1.age,
+        email: String::from("noman@gmail.com")
+    };
+
+    println!("{}", employee2.address);
+
+    // as you can see employee3 and employee4 are same but we can use the spread operator to copy the values of employee3 to employee4 by the help of struct update syntax 
+
+    let employee3: Employee = Employee {
+        name: String::from("John"),
+        address: String::from("NewYork, USA"),
+        age: 30,
+        email: String::from("john@gmail.com")
+    };
+
+    let employee4: Employee = Employee {
+        email: String::from("john123@gmail.com"),
+        ..employee3
+    };
+
+    print!("{}", employee4.email);
+    print!("{}", employee4.age);
+
 }
 
 
