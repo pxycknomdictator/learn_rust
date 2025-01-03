@@ -20,6 +20,9 @@ struct Student {
     is_student: bool,
 }
 
+struct Color(i32, i32, i32);
+struct Pointer(i32, i32, i32);
+
 fn main() {
     // Custom data types han? remind me of interfaces in TypeScript :D
     let first_user: User = User {
@@ -129,19 +132,20 @@ fn main() {
     for better clarity and type safety.
     */
 
-    let blue_color: (i32, i32, i32) = (0, 0, 100);
-    print_points(blue_color);
+    // to fix this problem we use struct tuple to mention that which value is for what purpose
 
-    let some_points: (i32, i32, i32) = (89, 72, 77);
-    print_colors(some_points);
-    
+    let blue_color: Color = Color(0, 0, 100);
+    print_colors(blue_color);
+
+    let some_points: Pointer = Pointer(89, 72, 77);
+    print_points(some_points);
 }
 
-fn print_colors(color: (i32, i32, i32)) {
+fn print_colors(color: Color) {
     print!("\nRed: {}\nGreen: {}\nBlue: {}", color.0, color.1, color.2);
 }
 
-fn print_points(point: (i32, i32, i32)) {
+fn print_points(point: Pointer) {
     print!("\nX: {}\nY: {}\nZ: {}", point.0, point.1, point.2);
 }
 
