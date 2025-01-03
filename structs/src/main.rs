@@ -11,7 +11,7 @@ struct Employee {
     name: String,
     age: u8,
     address: String,
-    email : String
+    email: String,
 }
 
 struct Student {
@@ -74,7 +74,7 @@ fn main() {
     let mut last_student: Student = Student {
         age: 9292,
         is_student: true,
-        name: String::from("John Doe")
+        name: String::from("John Doe"),
     };
 
     // I know this is exploding your mind, but this is how Rust works. It's a bit different from other programming languages.
@@ -84,15 +84,13 @@ fn main() {
     println!("\nReference Name is: {}", name_ref);
     println!("\nChanged Name is: {}", last_student.name);
 
-
-
     // lets suppose we have 2 structs and both structs some values are same
 
     let employee1: Employee = Employee {
         name: String::from("Noman"),
         address: String::from("Karachi, Pakistan"),
         age: 20,
-        email: String::from("noman@gmail.com")
+        email: String::from("noman@gmail.com"),
     };
 
     // most pain full way to do that
@@ -100,30 +98,52 @@ fn main() {
         name: employee1.name,
         address: employee1.address,
         age: employee1.age,
-        email: String::from("noman@gmail.com")
+        email: String::from("noman@gmail.com"),
     };
 
     println!("{}", employee2.address);
 
-    // as you can see employee3 and employee4 are same but we can use the spread operator to copy the values of employee3 to employee4 by the help of struct update syntax 
+    // as you can see employee3 and employee4 are same but we can use the spread operator to copy the values of employee3 to employee4 by the help of struct update syntax
 
     let employee3: Employee = Employee {
         name: String::from("John"),
         address: String::from("NewYork, USA"),
         age: 30,
-        email: String::from("john@gmail.com")
+        email: String::from("john@gmail.com"),
     };
 
+    // but here is a problem now i can't use the employee3 some String values because they are moved :(
     let employee4: Employee = Employee {
         email: String::from("john123@gmail.com"),
         ..employee3
     };
 
     print!("{}", employee4.email);
-    print!("{}", employee4.age);
+    print!("{}", employee3.age);
 
+    /*
+    Note:
+    A tuple containing three `i32` values representing some points.
+    This tuple has the same data types for all elements, which can lead to confusion or errors
+    if the meaning of each element is not clear. Consider using a struct with named fields
+    for better clarity and type safety.
+    */
+
+    let blue_color: (i32, i32, i32) = (0, 0, 100);
+    print_points(blue_color);
+
+    let some_points: (i32, i32, i32) = (89, 72, 77);
+    print_colors(some_points);
+    
 }
 
+fn print_colors(color: (i32, i32, i32)) {
+    print!("\nRed: {}\nGreen: {}\nBlue: {}", color.0, color.1, color.2);
+}
+
+fn print_points(point: (i32, i32, i32)) {
+    print!("\nX: {}\nY: {}\nZ: {}", point.0, point.1, point.2);
+}
 
 // As you can see this function create a struct with different arguments pass by user
 fn generate_struct(name: String, age: i32, is_student: bool) -> Student {
