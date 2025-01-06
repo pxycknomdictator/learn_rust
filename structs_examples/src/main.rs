@@ -35,9 +35,15 @@ struct Rectangle {
 
 // so what the hell i am doing here? as a javascript dev i think we are creating a methods for Rectangle structs and here self just like (this) keyword in JS
 
+// # IMPORTANT we can give any name to a function also struct fields name like with
 impl Rectangle {
     fn calculate_area(&self) -> u32 {
         self.width * self.height
+    }
+
+    // self means i can access struct fields and i can pass custom parameters to fn :D
+    fn can_hold(&self, custom_width:u32) -> bool {
+        self.width > custom_width
     }
 }
 
@@ -48,4 +54,5 @@ fn main() {
     };
 
     println!("area is: {}", rec1.calculate_area());
+    println!("Can Hold? : {}", rec1.can_hold(9));
 }
