@@ -49,6 +49,8 @@ impl Rectangle {
     }
 }
 
+// # Rust uses struct for data and impl for methods, with self as the instance reference, unlike JavaScript which uses class and this.
+
 fn main() {
     let rec1 = Rectangle {
         width: 89,
@@ -57,7 +59,7 @@ fn main() {
 
     let rec2 = Rectangle {
         width: 0,
-        height: 3
+        height: 3,
     };
 
     println!("area is: {}", rec1.calculate_area());
