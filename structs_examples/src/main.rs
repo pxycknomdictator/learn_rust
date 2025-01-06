@@ -42,8 +42,10 @@ impl Rectangle {
     }
 
     // self means i can access struct fields and i can pass custom parameters to fn :D
-    fn can_hold(&self, custom_width:u32) -> bool {
-        self.width > custom_width
+
+    // no way i can use &Self to mention that use self struct impl oh my god
+    fn can_hold(&self, custom_dimension: &Self) -> bool {
+        self.width > custom_dimension.width && self.height > custom_dimension.height
     }
 }
 
@@ -53,6 +55,11 @@ fn main() {
         height: 49,
     };
 
+    let rec2 = Rectangle {
+        width: 0,
+        height: 3
+    };
+
     println!("area is: {}", rec1.calculate_area());
-    println!("Can Hold? : {}", rec1.can_hold(9));
+    println!("Can Hold? : {}", rec1.can_hold(&rec2));
 }
