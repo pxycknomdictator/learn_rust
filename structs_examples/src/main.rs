@@ -49,6 +49,20 @@ impl Rectangle {
     }
 }
 
+struct NumberStruct {
+    number: i32,
+    divided_number: i32,
+}
+
+impl NumberStruct {
+    fn is_even(&self) -> bool {
+        if self.number % self.divided_number == 2 {
+            return true;
+        }
+        false
+    }
+}
+
 // # Rust uses struct for data and impl for methods, with self as the instance reference, unlike JavaScript which uses class and this.
 
 fn main() {
@@ -64,4 +78,11 @@ fn main() {
 
     println!("area is: {}", rec1.calculate_area());
     println!("Can Hold? : {}", rec1.can_hold(&rec2));
+
+    let num1 = NumberStruct {
+        number: 90,
+        divided_number: 2,
+    };
+
+    println!("Is Even ? {}", num1.is_even());
 }
