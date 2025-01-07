@@ -61,6 +61,16 @@ impl NumberStruct {
         }
         false
     }
+
+    fn increment(&mut self) -> i32 {
+        self.number += 1;
+        self.number
+    }
+
+    fn decrement(&mut self) -> i32 {
+        self.number -= 1;
+        self.number
+    }
 }
 
 // # Rust uses struct for data and impl for methods, with self as the instance reference, unlike JavaScript which uses class and this.
@@ -79,10 +89,13 @@ fn main() {
     println!("area is: {}", rec1.calculate_area());
     println!("Can Hold? : {}", rec1.can_hold(&rec2));
 
-    let num1 = NumberStruct {
+    let mut num1 = NumberStruct {
         number: 90,
         divided_number: 2,
     };
 
     println!("Is Even ? {}", num1.is_even());
+
+    println!("Increment {}", num1.increment());
+    println!("Decrement {}", num1.decrement());
 }
