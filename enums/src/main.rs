@@ -33,4 +33,39 @@ fn main() {
         IpAddressTypes::V4(addr) => println!("{}", addr),
         IpAddressTypes::V6(addr) => println!("{}", addr),
     }
+
+    #[derive(Debug)]
+    struct User {
+        name: String,
+        status: Status,
+    }
+
+    #[derive(Debug)]
+    enum Status {
+        Active,
+        InActive,
+    }
+
+    impl User {
+        fn check_status(&self) {
+            let result: &str = match self.status {
+                Status::Active => "Active",
+                Status::InActive => "Inactive",
+            };
+            println!("Name: {}, Status: {}", self.name, result);
+        }
+    }
+
+    let user1 = User {
+        name: String::from("Noman"),
+        status: Status::Active,
+    };
+
+    let user2: User = User {
+        name: String::from("John"),
+        status: Status::InActive
+    };
+
+    user1.check_status();
+    user2.check_status();
 }
