@@ -56,6 +56,9 @@ fn main() {
         }
     }
 
+    /* here i created two users and set name and status will be active or inactive with Status enum
+    than i call check_status method where i am simply matching self field comparison with match just like switch case btw */
+
     let user1 = User {
         name: String::from("Noman"),
         status: Status::Active,
@@ -63,7 +66,7 @@ fn main() {
 
     let user2: User = User {
         name: String::from("John"),
-        status: Status::InActive
+        status: Status::InActive,
     };
 
     user1.check_status();
