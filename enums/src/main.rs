@@ -110,4 +110,33 @@ fn main() {
     noman.check_status();
     john.check_status();
 
+    #[derive(Debug)]
+    enum UserRole {
+        ADMIN,
+        USER
+    }
+
+    #[derive(Debug)]
+    struct UserModel {
+        name: String,
+        role: UserRole
+    }
+
+    let name: String = String::from("Jane Doe");
+    let role: UserRole = UserRole::ADMIN;
+
+    let name2: String = String::from("Kevin Doe");
+    let role2: UserRole = UserRole::USER;
+
+    let user1: UserModel = user_generator(name2, role2);
+    println!("User: {:?}, Role: {:?}", user1.name, user1.role);
+
+    let user2 = user_generator(name, role);
+    println!("User: {:?}, Role: {:?}", user2.name, user2.role);
+
+    fn user_generator(name: String, role: UserRole) -> UserModel {
+        UserModel { name, role }
+    }
+
 }
+
