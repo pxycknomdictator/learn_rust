@@ -71,4 +71,23 @@ fn main() {
 
     user1.check_status();
     user2.check_status();
+
+
+    enum ProfileStatus {
+        ACTIVE,
+        INACTIVE
+    }
+
+    struct Profile {
+        name: String,
+        message: String,
+        status: ProfileStatus
+    }
+
+    let noman: Profile = Profile {
+        name: String::from("Noman"),
+        message: String::from("Hello Rust"),
+        status: ProfileStatus::ACTIVE
+    };
+
 }
