@@ -72,16 +72,27 @@ fn main() {
     user1.check_status();
     user2.check_status();
 
-
+    #[derive(Debug)]
     enum ProfileStatus {
         ACTIVE,
         INACTIVE
     }
 
+    #[derive(Debug)]
     struct Profile {
         name: String,
         message: String,
         status: ProfileStatus
+    }
+
+    impl Profile {
+        fn check_status(&self) {
+            let user_information: &str = match self.status {
+                ProfileStatus::ACTIVE => "Active",
+                ProfileStatus::INACTIVE => "InActive"
+            };
+            println!("My name is: {:?}\nI am {:?}\nuser & {:?}", self.name, user_information, self.message);
+        }
     }
 
     let noman: Profile = Profile {
@@ -89,5 +100,14 @@ fn main() {
         message: String::from("Hello Rust"),
         status: ProfileStatus::ACTIVE
     };
+
+    let john: Profile = Profile {
+        message: String::from("Hello Word"),
+        name: String::from("John"),
+        status: ProfileStatus::INACTIVE
+    };
+
+    noman.check_status();
+    john.check_status();
 
 }
