@@ -142,13 +142,24 @@
 #[allow(dead_code)]
 #[derive(Debug)]
 enum IpAddress {
-    V4(String),
+    V4(u8, u8, u8, u8),
     V6(String),
 }
 
-fn main() {
-    let four = IpAddress::V4(String::from("1.2.3.4"));
-    let six = IpAddress::V6(String::from("::1"));
+struct IpAddressGenerator {
+    ip: IpAddress,
+}
 
-    println!("{:?} {:?}", four, six);
+impl IpAddressGenerator {
+    fn new(ip: IpAddress) -> Self {
+        Self { ip }
+    }
+}
+
+fn main() {
+    let four = IpAddressGenerator::new(IpAddress::V4(127, 0, 0, 1));
+    let six = IpAddressGenerator::new(IpAddress::V6(String::from("::1")));
+
+    println!("{:?}", four.ip);
+    println!("{:?}", six.ip);
 }
