@@ -151,6 +151,12 @@ struct IpAddressKind {
     kind: IpAddress,
 }
 
+impl IpAddressKind {
+    fn route(&self) {
+        println!("Address is {} and kind is {:?}", self.address, self.kind)
+    }
+}
+
 fn main() {
     let four = IpAddressKind {
         address: String::from("1.2.3.4"),
@@ -161,10 +167,7 @@ fn main() {
         address: String::from("::1"),
         kind: IpAddress::V6,
     };
-    route(four);
-    route(six);
-}
 
-fn route(ip: IpAddressKind) {
-    println!("Address is {} and kind is {:?}", ip.address, ip.kind);
+    four.route();
+    six.route();
 }
