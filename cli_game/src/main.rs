@@ -1,19 +1,19 @@
+use std::io;
+
 fn main() {
-    let number = 69;
-    let input_number = 69;
+    let mut input_number = String::new();
+    let number = 9;
 
-    'game_loop: loop {
-        println!("Welcome to guessing Game");
-        println!("Guess the number");
+    println!("Welcome to guessing Game");
+    println!("Enter your number");
 
-        if number != input_number {
-            continue;
-        }
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Failed to get Input");
 
-        if number == input_number {
-            break 'game_loop;
-        }
+    if input_number.trim() == number.to_string() {
+        println!("Correct Number Guess {}", input_number.trim());
+    } else {
+        println!("Wrong Number Guess {}", input_number.trim());
     }
-
-    println!("You Guess {} which is correct :)", input_number);
 }
