@@ -1,4 +1,4 @@
-use my_crates::connect_to_database;
+use my_crates::{connect_to_database, database_status, get_user, Credentials, Status};
 
 fn main() {
     // Crates and modules in rust
@@ -16,4 +16,14 @@ fn main() {
 
     let database_string: &str = "mongodb://127.0.0.1:27017/database";
     println!("{}", connect_to_database(database_string));
+
+    let status = Status::CONNECTED(true);
+    println!("{}", database_status(&status));
+
+    let user: Credentials = Credentials {
+        username: String::from("Noman"),
+        password: String::from("Noman123"),
+    };
+
+    get_user(&user);
 }
