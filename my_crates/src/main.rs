@@ -1,4 +1,5 @@
-use my_crates::{connect_to_database, database_status, get_user, Credentials, Status};
+use my_crates::authentication::{get_user, Credentials};
+use my_crates::database::{connect_to_database, database_status, Status};
 
 fn main() {
     // Crates and modules in rust
