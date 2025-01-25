@@ -27,3 +27,19 @@ mod back_of_house {
     }
     fn cook_order() {}
 }
+
+// If i create an enum and make it public all fields are also public
+pub enum Angle {
+  Top,
+  Right,
+  Bottom,
+  Left,
+}
+
+// But in case of structs I need to manually mention that which field will we public or private
+
+pub struct User {
+  pub username: String, // visible
+  pub email: String, // visible
+  password: String // not visible
+}
