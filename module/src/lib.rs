@@ -30,16 +30,39 @@ mod back_of_house {
 
 // If i create an enum and make it public all fields are also public
 pub enum Angle {
-  Top,
-  Right,
-  Bottom,
-  Left,
+    Top,
+    Right,
+    Bottom,
+    Left,
 }
 
 // But in case of structs I need to manually mention that which field will we public or private
 
 pub struct User {
-  pub username: String, // visible
-  pub email: String, // visible
-  password: String // not visible
+    pub username: String, // visible
+    pub email: String,    // visible
+    password: String,     // not visible
+}
+
+
+// For 20 Seconds I also got confuse what i am doing bro but its so simple :)
+
+pub mod break_fast {
+    pub struct BreakFast {
+        pub toast: String,
+        juice: String,
+    }
+
+    impl BreakFast {
+        pub fn eat_breakfast(toast: &str) -> BreakFast {
+            BreakFast {
+                toast: String::from(toast),
+                juice: String::from("Orange Juice"),
+            }
+        }
+    }
+}
+
+fn check_breakfast() {
+    break_fast::BreakFast::eat_breakfast("Wheat Toast");
 }
