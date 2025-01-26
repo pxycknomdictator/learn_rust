@@ -1,3 +1,10 @@
+/*
+    Paths: Absolute paths (crate::) start from the root, while relative paths work within the current module.
+    Enums vs Structs: Public enums expose all variants, but struct fields need pub individually to be accessible.
+    super: Allows accessing parent module items.
+    Encapsulation: The BreakFast struct shows how private and public fields control access with methods like eat_breakfast.
+*/
+
 #![allow(dead_code)]
 
 mod front_of_house {
@@ -43,7 +50,6 @@ pub struct User {
     pub email: String,    // visible
     password: String,     // not visible
 }
-
 
 // For 20 Seconds I also got confuse what i am doing bro but its so simple :)
 
