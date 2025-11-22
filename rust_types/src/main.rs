@@ -88,4 +88,19 @@ fn main() {
     // To create array with same number with multiple times you can use this O_O
     let some_numbers: [i32; 10] = [4; 10];
     println!("{:?}", some_numbers);
+
+    // For Dynamic Arrays we use Vector
+    let mut countries: Vec<&str> = Vec::new();
+
+    countries.push("Pakistan");
+    countries.push("IceLand");
+    countries.push("Germany");
+
+    println!("countries: {:?}", countries);
+
+    // Another way to create vectors aka (Arrays)
+    let biggest_cities: Vec<&str> = vec!["Karachi", "Mumbai", "New York"];
+    println!("biggest cities: {:?}", biggest_cities);
+
+    // NOTE: Vectors store in HEAP thats mean it can be increase its and or decrease
 }
