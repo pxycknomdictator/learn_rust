@@ -80,6 +80,34 @@ impl NumberStruct {
 
 // # Rust uses struct for data and impl for methods, with self as the instance reference, unlike JavaScript which uses class and this.
 
+#[derive(Debug)]
+struct Payment {
+    amount: u8,
+}
+
+impl Payment {
+    fn new(amount: u8) -> Self {
+        return Payment { amount: amount };
+    }
+
+    fn pay(&mut self, new_amount: u8) {
+        self.amount += new_amount;
+    }
+
+    fn with_draw(&mut self, with_draw_amount: u8) {
+        if self.amount < with_draw_amount {
+            println!("Invalid Amount according to balance");
+            return;
+        }
+
+        self.amount -= with_draw_amount;
+    }
+
+    fn check_balance(&self) {
+        println!("Current Balance: {}", self.amount);
+    }
+}
+
 fn main() {
     let rec1 = Rectangle {
         width: 89,
@@ -105,4 +133,10 @@ fn main() {
     println!("Decrement {}", num1.decrement());
 
     println!("Multiplication {}", num1.multiply());
+
+    let mut payment: Payment = Payment::new(150);
+
+    payment.pay(50);
+    payment.with_draw(70);
+    payment.check_balance();
 }
